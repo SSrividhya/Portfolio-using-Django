@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block main %}
+    <div class="jumbotron">
+      <span><h2>About Me</h2></span>
+
+      <a href="{% url 'other_info:infos' %}"><h3>Check out Other info</h3></a>
+    </div>
+    <div class="container ">
+      {% for obj in aboutmes %}
+      <h3>{{obj.title}}</h3>
+      <p>{{obj.desc}}</p>
+      <img src="{{obj.image.url}}" height=200 width=200><br/>
+      {% if obj.url %}
+      <a href="{{obj.url}}">Check here</a>
+      {% endif %}
+      {% endfor %}
+    </div>
+{% endblock %}

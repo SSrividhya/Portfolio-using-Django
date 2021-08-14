@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block main %}
+    <div class="jumbotron">
+      <h2 class="centerAlign">{{info.title}}</h2>
+      <br>
+      <h4 class="centerAlign">{{info.date|date:"jS F Y"}}</h4>
+      <br>
+        </div>
+<div class="container">
+  <p>{{info.desc|safe}}</p>
+</div>
+  
+{% endblock %}

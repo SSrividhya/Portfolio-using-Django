@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block main %}
+    <div class="jumbotron">
+      <h2 class="centerAlign">Info</h2>
+      <br>
+      <h3 class="centerAlign">My Awesome {{ info.count }} blog{{info.count|pluralize}}</h3>
+      <br>
+      <br>
+      </div>
+      <div class="container">
+
+
+      {% for i in info %}
+<a href="{% url 'other_info:each_info' i.id %}"><h4>{{i.title}}</h4></a>
+<h6>{{i.date|date:"M Y"}}</h6>
+<p>{{i.desc|striptags|truncatechars:150}}</p>
+<br>
+      {% endfor %}
+      </div>
+{% endblock %}
