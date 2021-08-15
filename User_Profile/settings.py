@@ -127,3 +127,9 @@ STATIC_ROOT=BASE_DIR / 'static'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_ROOT=BASE_DIR / 'media'
 MEDIA_URL = '/media/'
+
+
+try:
+    from User_Profile.local_settings import *
+except ImportError:
+    print("Local Settings file not found")
